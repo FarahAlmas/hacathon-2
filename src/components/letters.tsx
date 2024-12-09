@@ -1,38 +1,48 @@
-import Image from "next/image"
-// import { Input } from "@/components/ui/input"
-// import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import {  Calendar } from 'lucide-react'
-
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar } from "lucide-react";
 
 export default function NewsletterAndBlog() {
   return (
     <div className="min-h-screen">
       {/* Newsletter Section */}
-     <div className="container mx-auto px-4">
-      <Image src={"/ractangle2.png"} alt="Newsletter" width={1440} height={400}></Image>
-    
-     </div>
+      <div className="container mx-auto px-4">
+        <Image
+          src={"/ractangle2.png"}
+          alt="Newsletter"
+          width={1440}
+          height={400}
+          className="w-full h-auto" // Make image responsive
+        />
+      </div>
 
       {/* Brand Logos */}
       <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-center items-center gap-8 opacity-50">
-          <Image src="/brandlogo.png" alt="Brand Logo" width={904} height={93} className="grayscale" />
+        <div className="flex flex-wrap justify-center items-center gap-8 opacity-50">
+          <Image
+            src="/brandlogo.png"
+            alt="Brand Logo"
+            width={904}
+            height={93}
+            className="w-auto max-w-full grayscale" // Ensure responsiveness for the logo
+          />
         </div>
       </div>
 
       {/* Latest Blog Section */}
       <section className="py-16">
-        <h2 className="text-[#151875] text-4xl font-josefin text-center mb-12">Latest Blog</h2>
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[...Array(3)].map((item) => (
-            <Card key={item} className="overflow-hidden shadow-lg">
+        <h2 className="text-[#151875] text-3xl md:text-4xl font-josefin text-center mb-12">
+          Latest Blog
+        </h2>
+        <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {[...Array(3)].map((item, index) => (
+            <Card key={index} className="overflow-hidden shadow-lg">
               <div className="bg-[#E7E4F8] h-60 relative">
                 <Image
-                  src="/blog1.png"
+                  src="/brandlogo.png"
                   alt="Blog"
-                  fill
-                  className="object-cover"
+                  layout="fill"
+              objectFit="cover"
                 />
               </div>
               <CardContent className="p-6">
@@ -47,7 +57,8 @@ export default function NewsletterAndBlog() {
                   Top essential Trends in 2021
                 </h3>
                 <p className="text-[#72718F] mb-4">
-                  More off this less hello samlande lied much over tightly circa horse taped mightly
+                  More off this less hello samlande lied much over tightly circa
+                  horse taped mightly
                 </p>
                 <a href="#" className="text-[#151875] underline">
                   Read More
@@ -57,9 +68,6 @@ export default function NewsletterAndBlog() {
           ))}
         </div>
       </section>
-
-     
     </div>
-  )
+  );
 }
-

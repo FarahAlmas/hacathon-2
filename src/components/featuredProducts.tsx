@@ -3,7 +3,7 @@ import Image from 'next/image'
 import {Flash_Card } from '@/constant/flashCard'
 import { Button } from './ui/button'
 import { Card } from './ui/card'
-import { Eye, Heart, SearchX, ShoppingCart } from 'lucide-react'
+import { Heart, SearchX, ShoppingCart } from 'lucide-react'
 
 
 

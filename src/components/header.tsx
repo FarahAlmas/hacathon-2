@@ -160,7 +160,7 @@ function Header() {
             <Link href={"/shopList"} className="block text-sm py-2">
               Shop
             </Link>
-            <Link href={"/contactUs"} className="block text-sm py-2">
+            <Link href={"/contact"} className="block text-sm py-2">
               Contact
             </Link>
           </nav>

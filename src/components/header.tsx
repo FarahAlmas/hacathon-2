@@ -20,11 +20,12 @@ import {
 import Link from "next/link";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+
+
+
 import { useState } from "react";
 
-
 function Header() {
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -103,10 +104,25 @@ function Header() {
           </button>
 
           {/* Navigation for Large Screens */}
+          
           <nav className="hidden lg:flex items-center gap-6">
-            <Link href={"/"} className="text-[#FB2E86] text-sm">
-              Home
-            </Link>
+             <Link href={"/"} className="text-[#FB2E86] text-sm">
+             <DropdownMenu>
+             <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
+               Home
+               <ChevronDown size={16} />
+             </DropdownMenuTrigger>
+             <DropdownMenuContent>
+               <DropdownMenuItem><Link href={"/shopGrid"}>Shop Grid Default</Link></DropdownMenuItem>
+               <DropdownMenuItem><Link href={"shopList"}>Shop List</Link></DropdownMenuItem>
+              <DropdownMenuItem>Shop Left Sidebar</DropdownMenuItem>
+               <DropdownMenuItem>Product Detail</DropdownMenuItem>
+               <DropdownMenuItem>Shopping Curt</DropdownMenuItem>
+               <DropdownMenuItem>Order Complete</DropdownMenuItem>
+               <DropdownMenuItem>Hekto Demo</DropdownMenuItem>
+             </DropdownMenuContent>
+           </DropdownMenu>
+             </Link>
             <Link href={"/cart"} className="text-sm hover:text-gray-600">
               Pages
             </Link>
@@ -168,3 +184,4 @@ function Header() {
 }
 
 export default Header;
+

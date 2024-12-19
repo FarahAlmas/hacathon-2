@@ -20,20 +20,19 @@ import {
 import Link from "next/link";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-
-
-
 import { useState } from "react";
 
+
 function Header() {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="w-full font-josefinSans">
       {/* Top Header */}
-      <div className="px-4 sm:px-6 lg:px-[372px] pt-[14px] pb-[14px] flex flex-wrap justify-between items-center bg-[#7E33E0] text-white">
+      <div className="px-4 sm:px-6 lg:px-[372px] py-[14px] flex flex-wrap justify-between items-center bg-[#7E33E0] text-white">
         {/* Contact Info */}
-        <div className="flex flex-wrap gap-4 items-center">
+        <div className="flex flex-wrap gap-4 items-center text-sm">
           <Mail size={16} />
           <p className="mr-4">mhhasanul@gmail.com</p>
           <PhoneCall size={16} />
@@ -41,7 +40,7 @@ function Header() {
         </div>
 
         {/* Language, Currency, and Links */}
-        <div className="flex flex-wrap gap-4 items-center">
+        <div className="flex flex-wrap gap-4 items-center text-sm">
           {/* Language Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
@@ -87,18 +86,16 @@ function Header() {
       </div>
 
       {/* Bottom Header */}
-    
-     <div className="w-full px-4 sm:px-6 lg:px-[372px] pt-[19px] pb-[19px] flex justify-between items-center">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href={"/"} className="text-2xl lg:text-3xl font-bold">
-            Hekto
-          </Link>
-            </div>
+      <div className="w-full px-4 sm:px-6 lg:px-[372px] py-[19px] flex flex-wrap justify-between items-center">
+        {/* Logo */}
+        <Link href={"/"} className="text-2xl lg:text-3xl font-bold">
+          Hekto
+        </Link>
 
-           {/* Burger Menu for Small Screens */}
-         <div>
-           <button
+        {/* Navigation & Burger Menu */}
+        <div className="flex items-center gap-4">
+          {/* Burger Menu for Small Screens */}
+          <button
             className="lg:hidden text-[#7E33E0] focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -108,21 +105,7 @@ function Header() {
           {/* Navigation for Large Screens */}
           <nav className="hidden lg:flex items-center gap-6">
             <Link href={"/"} className="text-[#FB2E86] text-sm">
-            <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
               Home
-              <ChevronDown size={16} />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem><Link href={"/shopGrid"}>Shop Grid Default</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href={"shopList"}>Shop List</Link></DropdownMenuItem>
-             <DropdownMenuItem>Shop Left Sidebar</DropdownMenuItem>
-              <DropdownMenuItem>Product Detail</DropdownMenuItem>
-              <DropdownMenuItem>Shopping Curt</DropdownMenuItem>
-              <DropdownMenuItem>Order Complete</DropdownMenuItem>
-              <DropdownMenuItem>Hekto Demo</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
             </Link>
             <Link href={"/cart"} className="text-sm hover:text-gray-600">
               Pages
@@ -140,7 +123,7 @@ function Header() {
               Contact
             </Link>
           </nav>
-        
+        </div>
 
         {/* Collapsible Menu for Small Screens */}
         {menuOpen && (
@@ -165,11 +148,9 @@ function Header() {
             </Link>
           </nav>
         )}
-         </div>
 
         {/* Search Bar */}
-        <div>
-        <div className="mt-4 lg:mt-0 flex items-center  lg:w-auto">
+        <div className="mt-4 lg:mt-0 flex items-center w-full lg:w-auto">
           <div className="relative w-full lg:w-auto">
             <Input
               className="w-full lg:w-[200px] bg-white border border-gray-300"
@@ -181,17 +162,9 @@ function Header() {
             </Button>
           </div>
         </div>
-        </div>
-    
-    </div>
+      </div>
     </div>
   );
 }
 
 export default Header;
-
-
-
-
-
-

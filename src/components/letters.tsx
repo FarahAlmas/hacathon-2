@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
+import { Blog } from "@/constant/blog";
 
 export default function NewsletterAndBlog() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       {/* Newsletter Section */}
       <div className="container mx-auto px-4">
         <Image
@@ -30,16 +31,16 @@ export default function NewsletterAndBlog() {
       </div>
 
       {/* Latest Blog Section */}
-      <section className="py-16">
+      <section className="py-16 ">
         <h2 className="text-[#151875] text-3xl md:text-4xl font-josefin text-center mb-12">
           Latest Blog
         </h2>
         <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[...Array(3)].map((item, index) => (
+          {Blog.map((item, index) => (
             <Card key={index} className="overflow-hidden shadow-lg">
               <div className="bg-[#E7E4F8] h-60 relative">
                 <Image
-                  src="/brandlogo.png"
+                  src={item.src}
                   alt="Blog"
                   layout="fill"
               objectFit="cover"
@@ -50,15 +51,14 @@ export default function NewsletterAndBlog() {
                   <span className="text-[#FB2E86]">SaberAli</span>
                   <div className="flex items-center gap-1 text-[#151875]">
                     <Calendar className="w-4 h-4" />
-                    <span>21 August, 2020</span>
+                    <span>{item.date}</span>
                   </div>
                 </div>
                 <h3 className="text-[#151875] text-lg font-semibold mb-4">
-                  Top essential Trends in 2021
+                  {item.heading}
                 </h3>
                 <p className="text-[#72718F] mb-4">
-                  More off this less hello samlande lied much over tightly circa
-                  horse taped mightly
+                 {item.para}
                 </p>
                 <a href="#" className="text-[#151875] underline">
                   Read More

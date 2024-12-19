@@ -7,7 +7,7 @@ function LeatestProducts() {
   return (
     <div className="flex flex-col justify-center items-center">
       <h1 className="text-[#151875] text-[32px] md:text-[42px] leading-[40px] md:leading-[49px] mt-[50px] md:mt-[71px]">
-        LeatestProducts
+        Leatest Products
       </h1>
 
       {/* Navigation Tabs */}

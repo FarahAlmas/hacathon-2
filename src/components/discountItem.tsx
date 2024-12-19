@@ -24,11 +24,11 @@
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Left Content */}
               <div className="space-y-6">
-                <h1 className="text-[#151875] font-['Josefin_Sans'] text-xl sm:text-2xl lg:text-[35px] leading-[132%] tracking-[0.015em]">
+                <h1 className="text-[#151875] font-['Josefin_Sans'] text-xl sm:text-2xl lg:text-[35px] leading-[46.2px] tracking-[0.015em]">
                   20% Discount On All Products
                 </h1>
     
-                <h2 className="text-[#FB2E86] font-['Josefin_Sans'] text-lg sm:text-xl leading-[132%] tracking-[0.015em]">
+                <h2 className="text-[#FB2E86] font-['Josefin_Sans']text-[21px] text-lg sm:text-xl leading-[27.7px] tracking-[0.015em]">
                   Eams Sofa Compact
                 </h2>
     

@@ -87,15 +87,18 @@ function Header() {
       </div>
 
       {/* Bottom Header */}
-      <div className="w-full px-4 sm:px-6 lg:px-[372px] pt-[19px] pb-[19px]">
+    
+     <div className="w-full px-4 sm:px-6 lg:px-[372px] pt-[19px] pb-[19px] flex justify-between items-center">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href={"/"} className="text-2xl lg:text-3xl font-bold">
             Hekto
           </Link>
+            </div>
 
-          {/* Burger Menu for Small Screens */}
-          <button
+           {/* Burger Menu for Small Screens */}
+         <div>
+           <button
             className="lg:hidden text-[#7E33E0] focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -105,25 +108,39 @@ function Header() {
           {/* Navigation for Large Screens */}
           <nav className="hidden lg:flex items-center gap-6">
             <Link href={"/"} className="text-[#FB2E86] text-sm">
+            <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
               Home
+              <ChevronDown size={16} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem><Link href={"/shopGrid"}>Shop Grid Default</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href={"shopList"}>Shop List</Link></DropdownMenuItem>
+             <DropdownMenuItem>Shop Left Sidebar</DropdownMenuItem>
+              <DropdownMenuItem>Product Detail</DropdownMenuItem>
+              <DropdownMenuItem>Shopping Curt</DropdownMenuItem>
+              <DropdownMenuItem>Order Complete</DropdownMenuItem>
+              <DropdownMenuItem>Hekto Demo</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
             </Link>
             <Link href={"/cart"} className="text-sm hover:text-gray-600">
               Pages
             </Link>
-            <Link href={"/product"} className="text-sm hover:text-gray-600">
+            <Link href={"/shopGrid"} className="text-sm hover:text-gray-600">
               Products
             </Link>
             <Link href={"/blog"} className="text-sm hover:text-gray-600">
               Blog
             </Link>
-            <Link href={"/shop"} className="text-sm hover:text-gray-600">
+            <Link href={"/shopList"} className="text-sm hover:text-gray-600">
               Shop
             </Link>
-            <Link href={"/contactUs"} className="text-sm hover:text-gray-600">
+            <Link href={"/contact"} className="text-sm hover:text-gray-600">
               Contact
             </Link>
           </nav>
-        </div>
+        
 
         {/* Collapsible Menu for Small Screens */}
         {menuOpen && (
@@ -134,13 +151,13 @@ function Header() {
             <Link href={"/cart"} className="block text-sm py-2">
               Pages
             </Link>
-            <Link href={"/product"} className="block text-sm py-2">
+            <Link href={"/shopGrid"} className="block text-sm py-2">
               Products
             </Link>
             <Link href={"/blog"} className="block text-sm py-2">
               Blog
             </Link>
-            <Link href={"/shop"} className="block text-sm py-2">
+            <Link href={"/shopList"} className="block text-sm py-2">
               Shop
             </Link>
             <Link href={"/contactUs"} className="block text-sm py-2">
@@ -148,9 +165,11 @@ function Header() {
             </Link>
           </nav>
         )}
+         </div>
 
         {/* Search Bar */}
-        <div className="mt-4 lg:mt-0 flex items-center w-full lg:w-auto">
+        <div>
+        <div className="mt-4 lg:mt-0 flex items-center  lg:w-auto">
           <div className="relative w-full lg:w-auto">
             <Input
               className="w-full lg:w-[200px] bg-white border border-gray-300"
@@ -162,7 +181,9 @@ function Header() {
             </Button>
           </div>
         </div>
-      </div>
+        </div>
+    
+    </div>
     </div>
   );
 }
@@ -174,203 +195,3 @@ export default Header;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function Header() {
-//   return (
-//     // main div
-//     <div className="w-full font-josefinSans">
-//       {/* topdiv */}
-
-//       <div className="px-[371px] py-[14px] flex justify-between items-center bg-[#7E33E0] text-white">
-//         {/* 1st div  */}
-//         <div className="flex justify-between gap-[10px] items-center">
-//           <Mail size={16} />
-//           <p className="mr-[48px]">mhhasanul@gmail.com</p>
-
-//           <PhoneCall size={16} />
-//           <p>(12345)67890</p>
-//         </div>
-
-//         {/* 2nd div */}
-//         <div className="flex justify-between gap-[17px] items-center">
-//           {/* drop down */}
-//           <div>
-//             <DropdownMenu>
-//               <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
-//                 English
-//                 <ChevronDown size={16} />
-//               </DropdownMenuTrigger>
-//               <DropdownMenuContent>
-//                 <DropdownMenuItem>Urdu</DropdownMenuItem>
-//                 <DropdownMenuItem>Arabic</DropdownMenuItem>
-//                 <DropdownMenuItem>English</DropdownMenuItem>
-//               </DropdownMenuContent>
-//             </DropdownMenu>
-//           </div>
-
-//           <div>
-//             <DropdownMenu>
-//               <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
-//                 USD
-//                 <ChevronDown size={16} />
-//               </DropdownMenuTrigger>
-//               <DropdownMenuContent>
-//                 <DropdownMenuItem>Urdu</DropdownMenuItem>
-//                 <DropdownMenuItem>Arabic</DropdownMenuItem>
-//                 <DropdownMenuItem>English</DropdownMenuItem>
-//               </DropdownMenuContent>
-//             </DropdownMenu>
-//           </div>
-
-//           {/* login */}
-
-//           <div className="flex gap-[1px] items-center">
-//             <Link href={"/"}>Login</Link>
-//             <User size={16} />
-//           </div>
-
-//           {/* wishList */}
-
-//           <div className="flex gap-[1px] items-center">
-//             <Link href={"/"}>Wishlist</Link>
-//             <Heart size={16} />
-//           </div>
-
-//           {/* add to cart */}
-//           <div>
-//             <Link href={"/"}>
-//               <ShoppingCart size={24} />
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* bottomdiv */}
-
-//       <div className="w-full px-[371px] py-[19px]">
-        
-//           <div className="flex items-center justify-between">
-//            <div className="flex gap-[88px]">
-//            <Link href={"/"} className="text-[34px] leading-[34px] font-bold">
-//               Hekto
-//             </Link>
-
-//             {/* navigation */}
-
-//             <nav className="hidden md:flex items-center gap-[35px]">
-//               <Link
-//                 href={"/"}
-//                 className="text-[#FB2E86] text-[16px] leading-[20px]"
-//               >
-//                 <DropdownMenu>
-//                   <DropdownMenuTrigger className="flex items-center gap-1 focus:outline-none">
-//                     Home
-//                     <ChevronDown size={16} />
-//                   </DropdownMenuTrigger>
-//                   <DropdownMenuContent>
-//                     <DropdownMenuItem>Urdu</DropdownMenuItem>
-//                     <DropdownMenuItem>Arabic</DropdownMenuItem>
-//                     <DropdownMenuItem>Hindi</DropdownMenuItem>
-//                   </DropdownMenuContent>
-//                 </DropdownMenu>
-//               </Link>
-//               <Link
-//                 href={"/aboutUs"}
-//                 className="text-[16px] leading-[20px] hover:text-gray-600"
-//               >
-//                 Pages
-//               </Link>
-//               <Link
-//                 href={"/product"}
-//                 className="text-[16px] leading-[20px] hover:text-gray-600"
-//               >
-//                 Products
-//               </Link>
-//               <Link
-//                 href={"/blog"}
-//                 className="text-[16px] leading-[20px] hover:text-gray-600"
-//               >
-//                 Blog
-//               </Link>
-
-//               <Link
-//                 href={"/shop"}
-//                 className="text-[16px] leading-[20px] hover:text-gray-600"
-//               >
-//                 Shop
-//               </Link>
-
-//               <Link
-//                 href={"/contactUs"}
-//                 className="text-[16px] leading-[20px] hover:text-gray-600"
-//               >
-//                 Contact
-//               </Link>
-//             </nav>
-
-//            </div>
-//             {/* search & icon */}
-
-//             <div className="flex items-center">
-//               <div className="relative hidden md:block">
-//                 <Input className=" bg-white border-[1px] border-gray-300" type="Search" />
-
-//                 <Button className="absolute bg-[#FB2E86]  top-1/2 -translate-y-1/2 ml-[185px]">
-//                   <Search className="absolute  text-  [#F3F9FF]" />
-//                 </Button>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     // </div>
-//   );
-// }
-
-// export default Header;

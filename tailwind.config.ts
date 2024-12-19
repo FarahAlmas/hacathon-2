@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
   	extend: {
+			fontFamily: {
+        josefin: ['Josefin Sans', 'sans-serif'],
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
